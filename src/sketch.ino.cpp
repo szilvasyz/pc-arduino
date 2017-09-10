@@ -49,7 +49,7 @@ void loop() {
     }
 
     if (SER.available()) {
-            SCON.write(SER.read());
+        SCON.write(SER.read());
     }
 
     if (SCON.available()) {
