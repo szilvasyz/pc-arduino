@@ -4,6 +4,8 @@ Trying/developing Arduino sketches on PC
 This small project has been started for trying a serial communication sketch (such as a GSM or GPS module) on PC using GCC with your favourite IDE/debugger. The hardware is very simple: it is only a USB/serial converter with TTL inputs/outputs.
 In the prototype a CP2102 converter was used which has all serial signals presented on soldering pads.
 
+The serial port device is defined in "Arduino.h" as SERIAL_PORT.
+
 ## In Arduino sketch you can use:
 - "Serial" as local console
 - "Serial1" as TTL serial converter TX/RX
