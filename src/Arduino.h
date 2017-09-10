@@ -35,7 +35,6 @@ void setup();
 void loop();
 void delay(unsigned long);
 unsigned long millis();
-void millis_init();
 
 
 #endif // ARDUINO_H

@@ -28,21 +28,17 @@ unsigned long millis_start;
 bool millis_started = false;
 
 
-void millis_init() {
-    timeval time;
-
-    gettimeofday(&time, NULL);
-    millis_start = (time.tv_sec * (uint64_t)1000) + (time.tv_usec / 1000);
-    millis_started = true;
-}
-
 unsigned long millis() {
     timeval time;
     
-    if (!millis_started) millis_init();
-    
     gettimeofday(&time, NULL);
     uint64_t millis_now = (time.tv_sec * (uint64_t)1000) + (time.tv_usec / 1000);
+
+    if (!millis_started) {
+        millis_start = millis_now;
+        millis_started = true;
+    }
+    
     return millis_now - millis_start;
 }
 
